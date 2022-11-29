@@ -7,6 +7,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 
+import javax.swing.*;
+
 public class ViewAddVinylController implements ViewController
 {
 
@@ -112,10 +114,10 @@ public class ViewAddVinylController implements ViewController
     }
     else
     {
-
       viewModel.save();
       resetFields();
       backBtn();
+      JOptionPane.showMessageDialog(null, "Your vinyl was saved!", "InfoBox: Saving", JOptionPane.INFORMATION_MESSAGE);
     }
   }
 

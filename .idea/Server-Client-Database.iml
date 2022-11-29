@@ -17,5 +17,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="lib1" level="application" />
+    <orderEntry type="library" name="postgresql-42.5.01" level="application" />
   </component>
 </module>

@@ -10,7 +10,7 @@ public class VinylDatabase implements VinylPersistance
   private static final String DRIVER = "org.postgresql.Driver";
   private static final String URL = "jdbc:postgresql://localhost:5432/postgres";
   private static final String USER = "postgres";
-  private static final String PASSWORD = "danisnever7";
+  private static final String PASSWORD = "020302";
 
   public VinylDatabase() throws ClassNotFoundException
   {
@@ -49,7 +49,7 @@ public class VinylDatabase implements VinylPersistance
     return list;
   }
 
-  @Override public void save(VinylList vinylList) throwsSQLException
+  /*@Override public void save(VinylList vinylList) throwsSQLException
   {
     for (int i = 0; i < vinylList.getNumberOfVinyls(); i++)
     {
