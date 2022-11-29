@@ -2,11 +2,11 @@ package client.views.home;
 
 import client.model.Model;
 
-public class ViewHomeModel
+public class HomeViewModel
 {
   private Model model;
 
-  public ViewHomeModel(Model model)
+  public HomeViewModel(Model model)
   {
     this.model = model;
   }

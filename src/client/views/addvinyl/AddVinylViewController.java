@@ -7,7 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 
-public class ViewAddVinylController implements ViewController
+public class AddVinylViewController implements ViewController
 {
 
   @FXML
@@ -34,10 +34,10 @@ public class ViewAddVinylController implements ViewController
   @FXML
   private TextField year;
 
-  private ViewAddVinylModel viewModel;
+  private AddVinylViewModel viewModel;
   private ViewHandler viewHandler;
 
-  public ViewAddVinylController(){}
+  public AddVinylViewController(){}
 
   public void init(ViewHandler vh, ViewModelFactory vmf)
   {

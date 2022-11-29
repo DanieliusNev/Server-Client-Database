@@ -4,12 +4,12 @@ import client.model.Model;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
-public class ViewAddVinylModel
+public class AddVinylViewModel
 {
   private Model model;
   private StringProperty title, condition, email, username, description, year, size, ratePerMinute;
 
-  public ViewAddVinylModel(Model model)
+  public AddVinylViewModel(Model model)
   {
     this.model = model;
     title = new SimpleStringProperty();

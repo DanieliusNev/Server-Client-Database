@@ -1,29 +1,29 @@
 package client.core;
 
-import client.views.addvinyl.ViewAddVinylModel;
-import client.views.home.ViewHomeModel;
+import client.views.addvinyl.AddVinylViewModel;
+import client.views.home.HomeViewModel;
 
 public class ViewModelFactory
 {
   private final ModelFactory mf;
-  private ViewHomeModel viewHomeModel;
-  private ViewAddVinylModel viewAddVinylModel;
+  private HomeViewModel homeViewModel;
+  private AddVinylViewModel addVinylViewModel;
 
   public ViewModelFactory(ModelFactory mf)
   {
     this.mf = mf;
   }
 
-  public ViewAddVinylModel getViewAddVinylModel()
+  public AddVinylViewModel getViewAddVinylModel()
   {
-    if (viewAddVinylModel == null)
-      viewAddVinylModel = new ViewAddVinylModel(mf.getModel());
-    return viewAddVinylModel;
+    if (addVinylViewModel == null)
+      addVinylViewModel = new AddVinylViewModel(mf.getModel());
+    return addVinylViewModel;
   }
-  public ViewHomeModel getViewHomeModel()
+  public HomeViewModel getViewHomeModel()
   {
-    if (viewHomeModel == null)
-      viewHomeModel = new ViewHomeModel(mf.getModel());
-    return viewHomeModel;
+    if (homeViewModel == null)
+      homeViewModel = new HomeViewModel(mf.getModel());
+    return homeViewModel;
   }
 }

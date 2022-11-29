@@ -5,12 +5,12 @@ import client.core.ViewModelFactory;
 import client.views.ViewController;
 import javafx.fxml.FXML;
 
-public class ViewHomeController implements ViewController
+public class HomeViewController implements ViewController
 {
-  private ViewHomeModel viewModel;
+  private HomeViewModel viewModel;
   private ViewHandler viewHandler;
 
-  public ViewHomeController(){}
+  public HomeViewController(){}
 
   public void init(ViewHandler vh, ViewModelFactory vmf)
   {
