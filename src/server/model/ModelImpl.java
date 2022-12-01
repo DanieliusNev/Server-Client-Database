@@ -81,6 +81,12 @@ public class ModelImpl implements Model
     return list.getCondition(i);
   }
 
+  @Override public void createAccount(String username, String password,
+      String email)
+  {
+    vinylPersistance.createAccount(username,password,email);
+  }
+
   /*@Override public String getRatePerMinute(int i)
   {
     return list.getRatePerMinute(i);

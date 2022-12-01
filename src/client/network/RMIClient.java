@@ -126,6 +126,20 @@ public class RMIClient implements Client, ClientCallBack
     return result;
   }
 
+  @Override public void createAccount(String username, String password,
+      String email)
+  {
+    try
+    {
+      server.createAccount(username,password,email);
+      System.out.println("RMICLIENT");
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
+  }
+
   /*@Override public String getRatePerMinute(int i)
   {
     return server.getRatePerMinute(i);

@@ -51,6 +51,14 @@ public class VinylDatabase implements VinylPersistance
     db.update(sql,title,year,size,condition,email,username,ratePerMinute,description);
   }
 
+  @Override public void createAccount(String username, String password,
+      String email)
+  {
+    System.out.println("Worked");
+    String sql = "INSERT INTO VinylListings._user(username, user_password, email) VALUES (?,?,?);";
+    db.createAccount(username,password,email,sql);
+  }
+
   /*@Override public void remove(Vinyl vinyl)
   {
 

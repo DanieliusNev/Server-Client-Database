@@ -10,4 +10,9 @@ public class SignUpViewModel
   {
     this.model = model;
   }
+
+  public void createAccount(String username, String password, String email)
+  {
+    model.createAccount(username, password,email);
+  }
 }

@@ -52,6 +52,7 @@ public class SignUpViewController implements ViewController
 
   @FXML
   void onSignUp() {
-
+    signUpViewModel.createAccount(username.getText(),password.getText(),email.getText());
+    System.out.println(username.getText() + password.getText() + email.getText());
   }
 }

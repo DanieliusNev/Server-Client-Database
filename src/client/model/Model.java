@@ -24,4 +24,6 @@ public interface Model extends Subject
 
   //int getSizeOfVinylList();
 
+  void createAccount(String username, String password, String email);
+
 }

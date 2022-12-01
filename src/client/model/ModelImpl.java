@@ -56,6 +56,13 @@ public class ModelImpl implements Model
     return client.getCondition(i);
   }
 
+  @Override public void createAccount(String username, String password,
+      String email)
+  {
+    client.createAccount(username,password,email);
+    System.out.println("model");
+  }
+
   /*@Override public String getRatePerMinute(int i)
   {
     return client.getUsername(i);

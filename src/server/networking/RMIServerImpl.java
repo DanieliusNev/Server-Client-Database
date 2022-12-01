@@ -63,6 +63,13 @@ public class RMIServerImpl implements RMIServer
     return model.getCondition(i);
   }
 
+  @Override public void createAccount(String username, String password,
+      String email) throws RemoteException
+  {
+    model.createAccount(username,password,email);
+    System.out.println("SERVER");
+  }
+
   /*@Override public String getRatePerMinute(int i)
   {
     return model.getRatePerMinute(i);

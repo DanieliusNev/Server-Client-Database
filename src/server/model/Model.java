@@ -24,5 +24,7 @@ public interface Model extends Subject
   String getCondition(int i);
 
   //String getRatePerMinute(int i);
+  void createAccount(String username, String password,
+      String email);
 
 }

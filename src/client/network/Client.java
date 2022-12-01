@@ -23,4 +23,6 @@ public interface Client extends Subject
   //String getRatePerMinute(int i);
 
   //int getSizeOfVinylList();
+
+  void createAccount(String username, String password, String email);
 }

@@ -23,4 +23,7 @@ public interface RMIServer extends Remote
   //String getRatePerMinute(int i);
 
   //int getSizeOfVinylList();
+
+  void createAccount(String username, String password,
+      String email) throws RemoteException;
 }
