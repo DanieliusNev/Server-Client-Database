@@ -32,4 +32,45 @@ public class RMIServerImpl implements RMIServer
   {
       model.save(title, year, size, condition, email, username, ratePerMinute, description);
   }
+
+  @Override public String getDescription(int i) throws RemoteException
+  {
+    return model.getDescription(i);
+  }
+
+  @Override public String getUsername(int i) throws RemoteException
+  {
+    return model.getUsername(i);
+  }
+
+  @Override public String getEmail(int i) throws RemoteException
+  {
+    return model.getEmail(i);
+  }
+
+  /*@Override public String getYear(int i)
+  {
+    return model.getYear(i);
+  }
+
+ *//* @Override public String getSize(int i)
+  {
+    return model.getSize(i);
+  }*/
+
+  @Override public String getCondition(int i) throws RemoteException
+  {
+    return model.getCondition(i);
+  }
+
+  /*@Override public String getRatePerMinute(int i)
+  {
+    return model.getRatePerMinute(i);
+  }
+*/
+  /*@Override public int getSizeOfVinylList()
+  {
+    return model.getSizeOfVinylList();
+  }*/
+
 }

@@ -117,9 +117,9 @@ public class AddVinylViewController implements ViewController
     {
       viewModel.save();
       resetFields();
+      JOptionPane.showMessageDialog(null, "Your vinyl was saved!", "Saving", JOptionPane.INFORMATION_MESSAGE);
       backBtn();
-      JOptionPane.showMessageDialog(null, "Your vinyl was saved!", "InfoBox: Saving", JOptionPane.INFORMATION_MESSAGE);
-    }
+       }
   }
 
 }

@@ -60,4 +60,80 @@ public class RMIClient implements Client, ClientCallBack
     }
   }
 
+  @Override public String getDescription(int i)
+  {
+    String result = "";
+    try
+    {
+      result = server.getDescription(i);
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
+    return result;
+  }
+
+  @Override public String getUsername(int i)
+  {
+    String result = "";
+    try
+    {
+      result = server.getUsername(i);
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
+    return result;
+  }
+
+  @Override public String getEmail(int i)
+  {
+    String result = "";
+    try
+    {
+      result = server.getEmail(i);
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
+    return result;
+  }
+
+  /*@Override public String getYear(int i)
+  {
+    return server.getYear(i);
+  }*/
+
+  /*@Override public String getSize(int i)
+  {
+    return server.getSize(i);
+  }*/
+
+  @Override public String getCondition(int i)
+  {
+    String result = "";
+    try
+    {
+      result = server.getCondition(i);
+    }
+    catch (RemoteException e)
+    {
+      e.printStackTrace();
+    }
+    return result;
+  }
+
+  /*@Override public String getRatePerMinute(int i)
+  {
+    return server.getRatePerMinute(i);
+  }*/
+
+  /*@Override public int getSizeOfVinylList()
+  {
+    return server.getSizeOfVinylList();
+  }*/
+
 }
