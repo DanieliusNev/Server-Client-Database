@@ -6,8 +6,15 @@ import client.views.ViewController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.stage.FileChooser;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
 public class AddVinylViewController implements ViewController
 
@@ -36,6 +43,8 @@ public class AddVinylViewController implements ViewController
 
   @FXML
   private TextField year;
+  @FXML
+  private ImageView imageView;
 
   private AddVinylViewModel viewModel;
   private ViewHandler viewHandler;
@@ -121,5 +130,37 @@ public class AddVinylViewController implements ViewController
       backBtn();
        }
   }
+  @FXML
+  void addImage() {
+    //FileChooser fc = new FileChooser();
+    //fc.getExtensionFilters().add(new FileChooser.ExtensionFilter("JPEG Files",".jpg"));
+    FileChooser fileChooser = new FileChooser();
+    fileChooser.setTitle("Open Resource File");
+    fileChooser.getExtensionFilters().addAll(
+        new FileChooser.ExtensionFilter("Text Files", "*.txt"),
+        new FileChooser.ExtensionFilter("Image Files", "*.png", "*.jpg", "*.gif"),
+        new FileChooser.ExtensionFilter("Audio Files", "*.wav", "*.mp3", "*.aac"),
+        new FileChooser.ExtensionFilter("All Files", "*.*"));
+    File selectedFile = fileChooser.showOpenDialog(null);
+    if (selectedFile != null)
+    {
+      Image image = new Image(selectedFile.toURI().toString(), 100,150,true,true);
+
+      imageView.setImage(image);
+      imageView.setPreserveRatio(true);
+      // retrieve image
+      /*BufferedImage bi = getMyImage();
+      try
+      {
+        ImageIO.write(bi, "jpeg", selectedFile);
+      }
+      catch (IOException e)
+      {
+        e.printStackTrace();
+      }*/
+
+    }
+  }
+
 
 }
