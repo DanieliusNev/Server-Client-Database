@@ -4,9 +4,6 @@ import server.domain.Vinyl;
 import server.domain.VinylList;
 import server.persistance.MyDatabase;
 
-import java.sql.SQLException;
-import java.util.ArrayList;
-
 public class VinylDatabase implements VinylPersistance
 {
   private MyDatabase db;
@@ -20,28 +17,10 @@ public class VinylDatabase implements VinylPersistance
     this.db= new MyDatabase(DRIVER, URL, USER, PASSWORD);
   }
 
-  @Override
-  public VinylList load() throws SQLException
+  @Override public VinylList load()
   {
-    String sql = "SELECT title, year, size, condition, email, username, rateperminute, description\n"
-        + "FROM VinylListings.vinyl;";
-    ArrayList<Object> results = db.showVinylList(sql);
-    VinylList list = new VinylList();
-    //should I put result.size - 1???
-    int i = 0;
-    while( i < results.size())
-    {
-      Vinyl vinyl = new Vinyl(String.valueOf(results.get(i)), String.valueOf(results.get(i+1)),String.valueOf(results.get(i+2)),String.valueOf(results.get(i+3)),String.valueOf(results.get(i+4)),
-          String.valueOf(results.get(i+5)),String.valueOf(results.get(i+6)),String.valueOf(results.get(i+7)));
-      System.out.println(vinyl.getTitle());
-      list.addVinyl(vinyl);
-          i = i + 8;
-    }
-    return list;
-    // TODO: Should I just do it here with VinylList, or just continue to transfer Object list until it reaches vinyllist or at least model
-  //Also connect with model
+    return null;
   }
-
 
 
   @Override public void save(String title, int year, int size, String condition,
@@ -51,18 +30,15 @@ public class VinylDatabase implements VinylPersistance
     db.update(sql,title,year,size,condition,email,username,ratePerMinute,description);
   }
 
-  @Override public void createAccount(String username, String password,
-      String email)
+  @Override public void remove(Vinyl vinyl)
   {
-    System.out.println("Worked");
-    String sql = "INSERT INTO VinylListings._user(username, user_password, email) VALUES (?,?,?);";
-    db.createAccount(username,password,email,sql);
+
   }
 
-  /*@Override public void remove(Vinyl vinyl)
+  @Override public void clear()
   {
 
-  }*/
+  }
 
   /*@Override public VinylList load() throws SQLException
   {
@@ -73,7 +49,7 @@ public class VinylDatabase implements VinylPersistance
     return list;
   }
 
-  /*@Override public void save(VinylList vinylList) throwsSQLException
+  @Override public void save(VinylList vinylList) throwsSQLException
   {
     for (int i = 0; i < vinylList.getNumberOfVinyls(); i++)
     {

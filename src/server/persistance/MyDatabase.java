@@ -1,7 +1,9 @@
 package server.persistance;
 
-import java.sql.*;
-import java.util.ArrayList;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class MyDatabase extends Object{
 
@@ -52,54 +54,11 @@ public class MyDatabase extends Object{
     }
   }
 
-  public void createAccount(String username, String password,
-      String email, String sql)
+  /*public ArrayList<Object[]> query(String sql, Object statementElements)
   {
-    try
-    {
-      PreparedStatement statement = connection.prepareStatement(sql);
-      statement.setString(1, username);
-      statement.setString(2, password);
-      statement.setString(3, email);
 
-      // execute update
-      int updates = statement.executeUpdate();
-      System.out.println("Number of updates: " + updates);
-    }
-    catch (SQLException e)
-    {
-      e.printStackTrace();
-    }
   }
-
-  public ArrayList<Object> showVinylList(String sql)
-  {
-    ArrayList<Object> list = new ArrayList<>();
-    try
-    {
-      PreparedStatement statement = connection.prepareStatement(sql);
-
-      ResultSet resultSet = statement.executeQuery();
-      while (resultSet.next())
-      {
-        int columns = resultSet.getMetaData().getColumnCount();
-        for (int i = 0; i < columns; i++)
-        {
-          list.add(resultSet.getObject(i + 1));
-          if (i < columns - 1)
-          {
-
-          }
-        }
-      }
-    }
-    catch (SQLException e)
-    {
-      e.printStackTrace();
-    }
-      return list;
-  }
-
+  */
 
 
 }

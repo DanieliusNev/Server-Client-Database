@@ -1,53 +1,29 @@
 package client.core;
 
-import client.views.addvinyl.AddVinylViewModel;
-import client.views.home.HomeViewModel;
-import client.views.login.LoginViewModel;
-import client.views.signUp.SignUpViewModel;
-import client.views.vinylBox.VinylBoxModel;
+import client.views.addvinyl.ViewAddVinylModel;
+import client.views.home.ViewHomeModel;
 
 public class ViewModelFactory
 {
   private final ModelFactory mf;
-  private HomeViewModel homeViewModel;
-  private AddVinylViewModel addVinylViewModel;
-  private VinylBoxModel vinylBoxModel;
-  private LoginViewModel loginViewModel;
-  private SignUpViewModel signUpViewModel;
+  private ViewHomeModel viewHomeModel;
+  private ViewAddVinylModel viewAddVinylModel;
 
   public ViewModelFactory(ModelFactory mf)
   {
     this.mf = mf;
   }
 
-  public AddVinylViewModel getViewAddVinylModel()
+  public ViewAddVinylModel getViewAddVinylModel()
   {
-    if (addVinylViewModel == null)
-      addVinylViewModel = new AddVinylViewModel(mf.getModel());
-    return addVinylViewModel;
+    if (viewAddVinylModel == null)
+      viewAddVinylModel = new ViewAddVinylModel(mf.getModel());
+    return viewAddVinylModel;
   }
-  public HomeViewModel getViewHomeModel()
+  public ViewHomeModel getViewHomeModel()
   {
-    if (homeViewModel == null)
-      homeViewModel = new HomeViewModel(mf.getModel());
-    return homeViewModel;
-  }
-  public VinylBoxModel getVinylBoxModel()
-  {
-    if (vinylBoxModel == null)
-      vinylBoxModel = new VinylBoxModel(mf.getModel());
-    return vinylBoxModel;
-  }
-  public LoginViewModel getLoginViewModel()
-  {
-    if (loginViewModel == null)
-      loginViewModel = new LoginViewModel(mf.getModel());
-    return loginViewModel;
-  }
-  public SignUpViewModel getSignUpViewModel()
-  {
-    if (signUpViewModel == null)
-      signUpViewModel = new SignUpViewModel(mf.getModel());
-    return signUpViewModel;
+    if (viewHomeModel == null)
+      viewHomeModel = new ViewHomeModel(mf.getModel());
+    return viewHomeModel;
   }
 }
